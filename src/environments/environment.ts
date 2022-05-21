@@ -1,4 +1,4 @@
 export const environment = {
-    googleOAuthClientId: "643852973078-vtl8fr92a014mjsjbjbetlhs8imb5388.apps.googleusercontent.com",
+    googleOAuthClientId: "643852973078-hrm1fkindneif641948r8ik5q8ft7ttu",
     apiUri: "http://localhost:5272/"
 }
