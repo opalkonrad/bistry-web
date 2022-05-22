@@ -1,8 +1,8 @@
 import { Button, Space, Table } from "antd"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import axiosAuth from "../../axios"
 import environment from "../../environments/environment.json"
+import useAxiosAuth from "../../hooks/useAxiosAuth"
 import { AddMenuItemModal } from "../modals/addMenuItemModal"
 import failNotification from "../notifications/fail/failNotification"
 import successNotification from "../notifications/success/successNotification"
@@ -21,6 +21,7 @@ interface IMenuItemWithKey extends IMenuItem {
 }
 
 const MenuItems = () => {
+  const axiosAuth = useAxiosAuth()
   const [menuItems, setMenuItems] = useState<Array<IMenuItemWithKey>>()
 
   const columns = [
