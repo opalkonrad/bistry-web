@@ -45,6 +45,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
+      
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: '**/environment.ts'
+        env:
+          apiUri: ${{ secrets.API_URI }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
