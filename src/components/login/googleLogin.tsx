@@ -1,7 +1,7 @@
 import { Layout } from "antd"
 import { useDispatch, useSelector } from "react-redux"
 import { logIn } from "../../actions/isLoggedIn"
-import { environment } from "../../environments/environment"
+import environment from "../../environments/environment.json"
 import useScript from "../../hooks/useScript"
 import { RootState } from "../../reducers"
 import "./googleLogin.css"

@@ -2,10 +2,11 @@ import { Button, Space, Table } from "antd"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import axiosAuth from "../../axios"
-import { environment } from "../../environments/environment"
+import environment from "../../environments/environment.json"
 import { AddMenuItemModal } from "../modals/addMenuItemModal"
 import failNotification from "../notifications/fail/failNotification"
 import successNotification from "../notifications/success/successNotification"
+
 
 export interface IMenuItem {
   id: string,

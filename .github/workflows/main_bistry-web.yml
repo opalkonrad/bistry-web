@@ -24,7 +24,7 @@ jobs:
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
         with:
-          files: '**/environment.ts'
+          files: '**/environment.json'
         env:
           apiUri: ${{ secrets.API_URI }}
 

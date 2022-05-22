@@ -1,5 +1,5 @@
 import axios, { AxiosRequestHeaders } from "axios"
-import { environment } from "./environments/environment"
+import environment from "./environments/environment.json"
 
 let headers: AxiosRequestHeaders = {
   "Content-Type": "application/json",
