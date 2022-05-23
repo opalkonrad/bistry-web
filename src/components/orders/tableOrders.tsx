@@ -22,22 +22,22 @@ const TableOrders = () => {
 
     const columns = [
         {
-            title: "Name",
+            title: "Nazwa",
             dataIndex: "name",
             key: "name"
         },
         {
-            title: "Category",
+            title: "Kategoria",
             dataIndex: "category",
             key: "category"
         },
         {
-            title: "Price",
+            title: "Cena",
             dataIndex: "price",
             key: "price"
         },
         {
-            title: "Description",
+            title: "Opis",
             dataIndex: "description",
             key: "description"
         }
@@ -100,14 +100,14 @@ const TableOrders = () => {
                             name: "Margherita",
                             category: "Pizza",
                             price: 27,
-                            description: "good pizza"
+                            description: "Good pizza"
                         },
                         {
                             id: "5",
-                            name: "Pizza speciala",
+                            name: "Salame Picante",
                             category: "Pizza",
                             price: 37,
-                            description: "good pizza"
+                            description: "Good pizza"
                         },
                     ]
                 },
@@ -119,8 +119,8 @@ const TableOrders = () => {
                             id: "2",
                             name: "Hawajska",
                             category: "Pizza",
-                            price: 227,
-                            description: "good pizza"
+                            price: 34,
+                            description: "Good pizza"
                         }
                     ]
                 },
@@ -132,7 +132,7 @@ const TableOrders = () => {
                             id: "1",
                             name: "Prosciutto",
                             category: "Pizza",
-                            price: 127,
+                            price: 28,
                             description: "good pizza"
                         }
                     ]
