@@ -64,7 +64,7 @@ const MenuItems = () => {
   }, [environment.apiUri + "MenuItems"])
 
   const downloadMenuItems = async () => {
-    await axios.get<IMenuItem[]>(environment.apiUri + "MenuItems")
+    axios.get<IMenuItem[]>(environment.apiUri + "MenuItems")
       .then(res => {
         const data = res.data
           .map((item: IMenuItem) => ({ ...item, key: item.id }))
@@ -77,7 +77,7 @@ const MenuItems = () => {
   }
 
   const formDataCallback = async (formData: IMenuItem) => {
-    await axiosAuth
+    axiosAuth
       .post("Admin/AddMenuItem",
         JSON.stringify({
           "name": `${formData.name}`,
@@ -96,7 +96,7 @@ const MenuItems = () => {
   }
 
   const handleDelete = async (id: string) => {
-    await axiosAuth
+    axiosAuth
       .delete(`Admin/DeleteMenuItem/${id}`)
       .then(() => {
         setMenuItems(menuItems?.filter((item: IMenuItemWithKey) => item.id !== id))
