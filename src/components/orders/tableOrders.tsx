@@ -13,6 +13,11 @@ export interface ITable {
     menuItems: string
 }
 
+interface ICallWaiter {
+  id: string,
+  tableId: number
+}
+
 
 const TableOrders = () => {
     const axiosAuth = useAxiosAuth()
@@ -66,7 +71,8 @@ const TableOrders = () => {
 
 
     useEffect(() => {
-        downloadTableOrders()
+      setInterval(() => downloadTableOrders(), 1000)
+      setInterval(() => checkWaiterCall(), 1000)
     }, [environment.apiUri + "TableOrders"])
 
 
@@ -81,6 +87,16 @@ const TableOrders = () => {
             .catch(() => {
                 failNotification("Couldn't download the list of table orders.")
             })
+    }
+
+    const checkWaiterCall = () => {
+      axiosAuth
+        .get<ICallWaiter[]>("Orders/IsWaiterCalled")
+        .then(res => {
+          res.data.forEach(element => {
+            successNotification(`Client from the table ${element.tableId} is waiting for you.`)
+          })
+        })
     }
     // const downloadTableOrders = () => {
     //     setTableOrders(
